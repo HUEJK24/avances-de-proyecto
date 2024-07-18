@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Citas agendadas - Profesionales</title>
+    <link rel="stylesheet" href="Style_profesionales.css">
+</head>
+<body data-profile="professional">
+    <header>
+        <button class="open-btn" onclick="openMenu()">☰</button>
+        <div class="title">
+            <h1>Tu bienestar es primero</h1>
+        </div>
+    </header>
+    <div class="container">
+        <div class="header">
+            <h1>WepSpy - Próximas Citas para Profesionales</h1>
+        </div>
+        <div class="search-bar">
+            <form action="#" method="get" class="search-form">
+                <input type="search" placeholder="Buscar cliente..." name="buscar" id="search">
+                <input type="button" value="🔍" onclick="searchAppointment()">
+            </form>
+        </div>
+        <div class="content">
+            <h2>Citas Programadas</h2>
+            <p>Visualización y gestión de citas para profesionales.</p>
+        </div>
+        <div id="appointments" class="appointments">
+            <!-- Aquí se cargarán las citas dinámicamente -->
+        </div>
+        <div class="create-appointment">
+            <button onclick="openModal('add')">Añadir Nueva Cita</button>
+        </div>
+    </div>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="modalTitle">Editar Cita</h2>
+            <form id="editForm" onsubmit="saveAppointment(event)">
+                <input type="hidden" id="appointmentIndex">
+                <label for="nombres">Nombres:</label><br>
+                <input type="text" id="nombres" name="nombres" required><br><br>
+                <label for="apellidos">Apellidos:</label><br>
+                <input type="text" id="apellidos" name="apellidos" required><br><br>
+                <label for="fecha">Fecha:</label><br>
+                <input type="date" id="fecha" name="fecha" required><br><br>
+                <label for="estado">Estado:</label><br>
+                <input type="text" id="estado" name="estado" required><br><br>
+                <label for="asunto">Asunto:</label><br>
+                <input type="text" id="asunto" name="asunto" required><br><br>
+                <label for="motivo">Motivo:</label><br>
+                <input type="text" id="motivo" name="motivo" required><br><br>
+                <label for="estado_solicitud">Estado de la solicitud:</label><br>
+                <input type="text" id="estado_solicitud" name="estado_solicitud" required><br><br>
+                <input type="submit" value="Guardar cambios">
+            </form>
+        </div>
+    </div>
+
+    <div id="side-menu" class="side-menu">
+        <a href="javascript:void(0)" class="close-btn" onclick="closeMenu()">&times;</a>
+        <div class="menu-content">
+            <div class="menu-section">
+                <button class="btn"><a href="/perfil.html">Ver Perfil</a></button>
+            </div>
+            <div class="menu-section">
+                <button class="btn dropdown-toggle" onclick="toggleDropdown(this)">Historial de Citas</button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="/agendar-cita.html">Agendar Cita</a></li>
+                    <li><a class="dropdown-item" href="/citas-proximas.html">Citas por Venir</a></li>
+                    <li><a class="dropdown-item" href="/citas-completadas.html">Citas Completadas</a></li>
+                    <li><a class="dropdown-item" href="/citas-canceladas.html">Citas Canceladas</a></li>
+                    <li><a class="dropdown-item" href="/solicitudes-pendientes.html">Solicitudes Pendientes</a></li>
+                </ul>
+            </div>
+            <div class="menu-section">
+                <button class="btn dropdown-toggle" onclick="toggleDropdown(this)">Sobre Nosotros</button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="/equipo.html">¿Quiénes Somos?</a></li>
+                    <li><a class="dropdown-item" href="/proyecto.html">El Propósito de WepSpy</a></li>
+                </ul>
+            </div>
+            <div class="menu-section">
+                <button class="btn dropdown-toggle" onclick="toggleDropdown(this)">Ayuda</button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="https://www.who.int/es/news-room/fact-sheets/detail/mental-health-strengthening-our-response" target="_blank">Salud Mental</a></li>
+                    <li><a class="dropdown-item" href="https://teleton.org/la-importancia-de-la-salud-mental/" target="_blank">Importancia de la Salud Mental</a></li>
+                </ul>
+            </div>
+            <div class="menu-section">
+                <button class="btn"><a href="/pagina-principal.html">Cerrar Sesión</a></button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

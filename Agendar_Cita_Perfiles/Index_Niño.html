@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Citas agendadas - Niños y Adolescentes</title>
+    <link rel="stylesheet" href="Style_niños.css">
+</head>
+<header>
+    <button class="open-btn" onclick="openMenu()">☰</button>
+    <div class="title">
+        <h1>Tu bienestar es primero</h1>
+    </div>
+</header>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>WepSpy - Próximas citas para Niños y Adolescentes</h1>
+        </div>
+        
+        <div class="search-bar">
+            <form id="searchForm" onsubmit="searchAppointments(event)" style="width: 100%;">
+                <input type="search" id="searchInput" placeholder="Buscar a un cliente..." name="buscar">
+                <input type="submit" value="🔍">
+            </form>
+        </div>
+        
+        <div class="content">
+            <h2>Citas Programadas</h2>
+            <p>Visualización y gestión de citas para niños y adolescentes.</p>
+        </div>
+        <div id="appointments" class="appointments">
+            <!-- Aquí se cargarán las citas dinámicamente -->
+        </div>
+        
+    </div>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="modalTitle">Editar Cita</h2>
+            <form id="editForm" onsubmit="saveAppointment(event)">
+                <input type="hidden" id="appointmentId">
+                <label for="name">Nombre completo:</label><br>
+                <input type="text" id="name" name="name" required><br><br>
+                <label for="date">Fecha:</label><br>
+                <input type="date" id="date" name="date" required><br><br>
+                <label for="status">Estado:</label><br>
+                <input type="text" id="status" name="status" required><br><br>
+                <label for="subject">Asunto:</label><br>
+                <input type="text" id="subject" name="subject" required><br><br>
+                <label for="reason">Motivo:</label><br>
+                <input type="text" id="reason" name="reason" required><br><br>
+                <label for="requestStatus">Estado de la solicitud:</label><br>
+                <input type="text" id="requestStatus" name="requestStatus" required><br><br>
+                <input type="submit" value="Guardar cambios">
+            </form>
+        </div>
+    </div>
+
+      <!-- Menú lateral -->
+      <div id="side-menu" class="side-menu">
+        <a href="javascript:void(0)" class="close-btn" onclick="closeMenu()">&times;</a>
+        <div class="menu-content">
+            <div class="menu-section">
+                <button class="btn"><a href="/PerfilU.html">Ver perfil</a></button>
+            </div>
+            <div class="menu-section">
+                <button class="btn dropdown-toggle">Historial de tus citas</button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="/AgendarCitaU.html">Agendar Cita</a></li>
+
+                    <!-- citas 
+                    <li><a class="dropdown-item" href="/CitasProximasU.html">Citas por venir</a></li>
+                    <li><a class="dropdown-item" href="/CitasCompletadasU.html">Citas finalizadas</a></li>
+                    <li><a class="dropdown-item" href="/CitasCanceladasU.html">Citas Canceladas</a></li>
+                    <li><a class="dropdown-item" href="/SolicitudesPendientesU.html">Solicitudes pendientes</a></li>
+                    -->
+                    
+                </ul>
+            </div>
+            <div class="menu-section">
+                <button class="btn dropdown-toggle">Sobre nosotros y la app</button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="/Equipo.html">¿Quiénes somos?</a></li>
+                    <li><a class="dropdown-item" href="/Proyecto.html">El propósito de WebPsy</a></li>
+                </ul>
+            </div>
+            <div class="menu-section">
+                <button class="btn dropdown-toggle">Necesitas ayuda para entender</button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="https://www.who.int/es/news-room/fact-sheets/detail/mental-health-strengthening-our-response" target="_blank">La salud mental</a></li>
+                    <li><a class="dropdown-item" href="https://teleton.org/la-importancia-de-la-salud-mental/" target="_blank">Importancia de la salud mental</a></li>
+                </ul>
+            </div>
+            <div class="menu-section">
+                <button class="btn"><a href="/PaginaPrincipal.html">Cerrar sesión</a></button>
+            </div>
+        </div>
+    </div>
+    <!-- final del menu lateral -->
+    <script src="script.js"></script>
+</body>
+</html>
