@@ -1,16 +1,13 @@
-// script.js
+document.addEventListener('DOMContentLoaded', function() {
+    const profileSections = document.querySelectorAll('.profile-section');
 
-document.addEventListener("DOMContentLoaded", function() {
-    const tabButtons = document.querySelectorAll(".tab-button");
-    const tabContents = document.querySelectorAll(".tab-content");
+    profileSections.forEach(section => {
+        section.addEventListener('mouseenter', () => {
+            section.classList.add('hovered');
+        });
 
-    tabButtons.forEach(button => {
-        button.addEventListener("click", () => {
-            tabButtons.forEach(btn => btn.classList.remove("active"));
-            tabContents.forEach(content => content.classList.remove("active"));
-
-            button.classList.add("active");
-            document.getElementById(button.dataset.tab).classList.add("active");
+        section.addEventListener('mouseleave', () => {
+            section.classList.remove('hovered');
         });
     });
 });

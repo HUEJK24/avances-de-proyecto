@@ -1,152 +1,138 @@
-/* styles.css */
-
-* {
-    box-sizing: border-box;
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
-}
-
-body {
     display: flex;
-    height: 100vh;
-}
-
-.container {
-    display: flex;
-    width: 100%;
-}
-
-.sidebar {
-    width: 250px;
-    background-color: #f8f9fa;
-    padding: 20px;
-}
-
-.logo {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 20px;
-}
-
-nav ul {
-    list-style: none;
-}
-
-nav ul li {
-    padding: 10px 0;
-    cursor: pointer;
-}
-
-.main-content {
-    flex-grow: 1;
-    padding: 20px;
-    overflow-y: auto;
-}
-
-.cover-photo {
-    position: relative;
-}
-
-#cover-photo {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-}
-
-.change-cover {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: #fff;
-    border: none;
-    padding: 5px 10px;
-    cursor: pointer;
-}
-
-.profile-info {
-    display: flex;
+    justify-content: center;
     align-items: center;
-    margin-top: -50px;
-    padding: 10px;
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: 100vh; /* Make sure the body height is 100% of the viewport */
+    overflow: hidden;
 }
 
-.profile-photo img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    margin-right: 20px;
+.profile-container {
+    width: 95%; /* Adjust the width to your preference */
+    max-width: 1400px; /* Maximum width of the container */
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+    margin: auto; /* Center the container */
 }
 
-.profile-info h1 {
-    margin-bottom: 5px;
-}
-
-.profile-info p {
+h1 {
+    font-size: 36px;
+    font-weight: normal;
     margin-bottom: 10px;
+    color: #333;
 }
 
-.stats {
-    margin-left: auto;
+.subtitle {
+    font-size: 20px;
+    color: #666;
+    margin-bottom: 30px;
 }
 
-.stats p {
-    margin-bottom: 5px;
-}
-
-.tabs {
+.profile-content {
     display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    animation: slideUp 1s ease-in-out;
+    width: 100%; /* Adjust the width to fill more space */
+    height: 75vh; /* Adjust the height to fill more vertical space */
+    box-sizing: border-box;
+}
+
+.profile-section {
+    flex: 1;
+    min-width: 200px;
+    margin: 20px;
+    transition: transform 0.3s ease;
+    box-sizing: border-box;
+}
+
+.profile-section:hover {
+    transform: scale(1.05);
+}
+
+.profile-section h2 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.about p,
+.details p {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.credits {
+    font-size: 12px;
+    color: #999;
+}
+
+.credits a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.credits a:hover {
+    text-decoration: underline;
+}
+
+.photo img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid #ddd;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.social-icons {
     margin-top: 20px;
 }
 
-.tab-button {
-    padding: 10px 20px;
-    cursor: pointer;
-    border: none;
-    background-color: #f8f9fa;
-    margin-right: 5px;
+.social-icons a {
+    margin: 0 10px;
+    display: inline-block;
+    transition: transform 0.3s ease;
 }
 
-.tab-button.active {
-    background-color: #007bff;
-    color: #fff;
+.social-icons img {
+    width: 24px;
+    height: 24px;
 }
 
-.tab-content {
-    display: none;
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-top: 10px;
+.profile-section:hover .photo img {
+    transform: scale(1.1);
+    border-color: #007bff;
 }
 
-.tab-content.active {
-    display: block;
+.social-icons a:hover {
+    transform: scale(1.2);
 }
 
-.form-group {
-    margin-bottom: 15px;
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
-.form-group label {
-    display: block;
-    margin-bottom: 5px;
-}
-
-.form-group input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-button[type="submit"] {
-    background-color: #007bff;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    border-radius: 4px;
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
