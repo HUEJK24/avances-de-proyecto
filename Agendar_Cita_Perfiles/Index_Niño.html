@@ -35,71 +35,45 @@
         
     </div>
 
-    <!-- The Modal -->
-    <div id="myModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <h2 id="modalTitle">Editar Cita</h2>
-            <form id="editForm" onsubmit="saveAppointment(event)">
-                <input type="hidden" id="appointmentId">
-                <label for="name">Nombre completo:</label><br>
-                <input type="text" id="name" name="name" required><br><br>
-                <label for="date">Fecha:</label><br>
-                <input type="date" id="date" name="date" required><br><br>
-                <label for="status">Estado:</label><br>
-                <input type="text" id="status" name="status" required><br><br>
-                <label for="subject">Asunto:</label><br>
-                <input type="text" id="subject" name="subject" required><br><br>
-                <label for="reason">Motivo:</label><br>
-                <input type="text" id="reason" name="reason" required><br><br>
-                <label for="requestStatus">Estado de la solicitud:</label><br>
-                <input type="text" id="requestStatus" name="requestStatus" required><br><br>
-                <input type="submit" value="Guardar cambios">
-            </form>
-        </div>
-    </div>
-
-      <!-- Menú lateral -->
-      <div id="side-menu" class="side-menu">
+     <!-- Menú lateral -->
+    <div id="side-menu" class="side-menu">
         <a href="javascript:void(0)" class="close-btn" onclick="closeMenu()">&times;</a>
         <div class="menu-content">
             <div class="menu-section">
-                <button class="btn"><a href="/PerfilU.html">Ver perfil</a></button>
+                <button class="btn"><a href="/perfil.html">Ver Perfil</a></button>
             </div>
             <div class="menu-section">
-                <button class="btn dropdown-toggle">Historial de tus citas</button>
+                <button class="btn dropdown-toggle" onclick="toggleDropdown(this)">Historial de Citas</button>
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="/AgendarCitaU.html">Agendar Cita</a></li>
-
-                    <!-- citas 
-                    <li><a class="dropdown-item" href="/CitasProximasU.html">Citas por venir</a></li>
-                    <li><a class="dropdown-item" href="/CitasCompletadasU.html">Citas finalizadas</a></li>
-                    <li><a class="dropdown-item" href="/CitasCanceladasU.html">Citas Canceladas</a></li>
-                    <li><a class="dropdown-item" href="/SolicitudesPendientesU.html">Solicitudes pendientes</a></li>
+                    <li><a class="dropdown-item" href="/agendar-cita.html">Agendar Cita</a></li>
+                    <!--
+                    <li><a class="dropdown-item" href="/citas-proximas.html">Citas por Venir</a></li>
+                    <li><a class="dropdown-item" href="/citas-completadas.html">Citas Completadas</a></li>
+                    <li><a class="dropdown-item" href="/citas-canceladas.html">Citas Canceladas</a></li>
+                    <li><a class="dropdown-item" href="/solicitudes-pendientes.html">Solicitudes Pendientes</a></li>
                     -->
-                    
                 </ul>
             </div>
             <div class="menu-section">
-                <button class="btn dropdown-toggle">Sobre nosotros y la app</button>
+                <button class="btn dropdown-toggle" onclick="toggleDropdown(this)">Sobre Nosotros</button>
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="/Equipo.html">¿Quiénes somos?</a></li>
-                    <li><a class="dropdown-item" href="/Proyecto.html">El propósito de WebPsy</a></li>
+                    <li><a class="dropdown-item" href="/equipo.html">¿Quiénes Somos?</a></li>
+                    <li><a class="dropdown-item" href="/proyecto.html">El Propósito de WepSpy</a></li>
                 </ul>
             </div>
             <div class="menu-section">
-                <button class="btn dropdown-toggle">Necesitas ayuda para entender</button>
+                <button class="btn dropdown-toggle" onclick="toggleDropdown(this)">Ayuda</button>
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="https://www.who.int/es/news-room/fact-sheets/detail/mental-health-strengthening-our-response" target="_blank">La salud mental</a></li>
-                    <li><a class="dropdown-item" href="https://teleton.org/la-importancia-de-la-salud-mental/" target="_blank">Importancia de la salud mental</a></li>
+                    <li><a class="dropdown-item" href="https://www.who.int/es/news-room/fact-sheets/detail/mental-health-strengthening-our-response" target="_blank">Salud Mental</a></li>
+                    <li><a class="dropdown-item" href="https://teleton.org/la-importancia-de-la-salud-mental/" target="_blank">Importancia de la Salud Mental</a></li>
                 </ul>
             </div>
             <div class="menu-section">
-                <button class="btn"><a href="/PaginaPrincipal.html">Cerrar sesión</a></button>
+                <button class="btn"><a href="/pagina-principal.html">Cerrar Sesión</a></button>
             </div>
         </div>
     </div>
-    <!-- final del menu lateral -->
+ <!-- final del menu lateral -->
     <script src="script.js"></script>
 </body>
 </html>

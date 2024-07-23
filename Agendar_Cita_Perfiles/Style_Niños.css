@@ -206,6 +206,7 @@ header {
 .side-menu .menu-content {
     padding: 8px 32px;
     color: #fff;
+    padding: 8px 32px;
     opacity: 0;
     transition: opacity 0.5s;
 }

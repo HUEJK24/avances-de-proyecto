@@ -1,13 +1,3 @@
-// Función para abrir el menú lateral
-function openMenu() {
-    document.getElementById("side-menu").style.width = "250px";
-}
-
-// Función para cerrar el menú lateral
-function closeMenu() {
-    document.getElementById("side-menu").style.width = "0";
-}
-
 // Función para abrir el modal de edición o añadir cita
 function openModal(action, index) {
     const modal = document.getElementById("myModal");
