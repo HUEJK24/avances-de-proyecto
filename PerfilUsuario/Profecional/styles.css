@@ -96,10 +96,9 @@ body {
 }
 
 .photo img {
-    width: 150px;
-    height: 150px;
+    width: 300px;
+    height: 300px;
     border-radius: 50%;
-    border: 5px solid #ddd;
     transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
